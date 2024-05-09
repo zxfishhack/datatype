@@ -1,0 +1,13 @@
+{
+  "name": "@378q/datatype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish --access public --registry=https://registry.npmjs.org"
+  }
+}
