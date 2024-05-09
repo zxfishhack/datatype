@@ -232,7 +232,7 @@ export class bytes implements DataType<Uint8Array> {
   }
 
   set value(value: Uint8Array) {
-    this.v.set(value, Math.min(value.length, this.v.length))
+    this.v = new Uint8Array(value)
   }
 
   decode(data: DataView, offset: number): void {
