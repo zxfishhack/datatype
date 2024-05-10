@@ -22,6 +22,20 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
   ) {
   }
 
+  splice(start: number, deleteCount?: number, ...items: V[]) {
+    if (deleteCount !== undefined) {
+      this.v.splice(start, deleteCount, ...items);
+    } else {
+      this.v.splice(start, deleteCount);
+    }
+    this.count = this.v.length
+  }
+
+  push(...v: V[]) {
+    this.v.push(...v);
+    this.count = this.v.length
+  }
+
   get length() {
     return this.count
   }
