@@ -14,7 +14,7 @@ export declare interface Struct {
 }
 
 export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
-  v: V[] = []
+  private v: V[] = []
 
   constructor(
     private factory: () => T,
@@ -87,7 +87,7 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
 }
 
 export class int8_t implements DataType<number> {
-  v: number = 0
+  private v: number = 0
   public size = 1
 
   constructor() {
@@ -111,7 +111,7 @@ export class int8_t implements DataType<number> {
 }
 
 export class uint8_t implements DataType<number> {
-  v: number = 0
+  private v: number = 0
   public size = 1
 
   constructor() {
@@ -135,7 +135,7 @@ export class uint8_t implements DataType<number> {
 }
 
 export class int16_t implements DataType<number> {
-  v: number = 0
+  private v: number = 0
   public size = 2
 
   constructor() {
@@ -159,7 +159,7 @@ export class int16_t implements DataType<number> {
 }
 
 export class uint16_t implements DataType<number> {
-  v: number = 0
+  private v: number = 0
   public size = 2
 
   constructor() {
@@ -183,7 +183,7 @@ export class uint16_t implements DataType<number> {
 }
 
 export class int32_t implements DataType<number> {
-  v: number = 0
+  private v: number = 0
   public size = 4
 
   constructor() {
@@ -207,7 +207,7 @@ export class int32_t implements DataType<number> {
 }
 
 export class uint32_t implements DataType<number> {
-  v: number = 0
+  private v: number = 0
   public size = 4
 
   constructor() {
@@ -231,7 +231,7 @@ export class uint32_t implements DataType<number> {
 }
 
 export class bytes implements DataType<Uint8Array> {
-  v: Uint8Array
+  private v: Uint8Array
 
   constructor(length: number) {
     this.v = new Uint8Array(length)
