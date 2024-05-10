@@ -267,6 +267,14 @@ export function bitCount (n: number) {
   return ((n + (n >> 4) & 0xF0F0F0F) * 0x1010101) >> 24
 }
 
+export function bitSet(n: number, idx: number) {
+  return (n & (1 << idx)) > 0
+}
+
+export function bitReset(n: number, idx: number) {
+  return ((n) ^ (~(1 << idx))) > 0
+}
+
 export function makeUInt8Array(...value: number[]): Uint8Array {
   const res = new Uint8Array(value.length)
   value.forEach((v, i) => {
