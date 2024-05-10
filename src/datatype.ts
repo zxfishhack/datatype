@@ -20,6 +20,10 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
     private factory: () => T,
     private count: number,
   ) {
+    const inst = factory()
+    for(let i=0; i<count; i++) {
+      this.v.push(inst.value)
+    }
   }
 
   splice(start: number, deleteCount?: number, ...items: V[]) {
@@ -60,6 +64,7 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
   }
 
   decode(data: DataView, offset: number): void {
+    this.v = []
     for (let i = 0; i < this.length; i++) {
       const inst = this.factory()
       inst.decode(data, offset)
