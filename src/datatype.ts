@@ -1,4 +1,4 @@
-import { clearBit, setBit } from './utils'
+import { bitReset, bitSet, clearBit, setBit } from './utils'
 
 export declare interface DataTypeSize {
   get size(): number;
@@ -105,6 +105,15 @@ export class int8_t implements DataType<number> {
     this.v = clearBit(this.v, index)
   }
 
+  bitIsSet(index: number) {
+    return bitSet(this.v, index)
+  }
+
+  bitIsReset(index: number) {
+    return bitReset(this.v, index)
+  }
+
+
   get value() {
     return this.v
   }
@@ -132,6 +141,14 @@ export class uint8_t implements DataType<number> {
 
   clearBit(index: number) {
     this.v = clearBit(this.v, index)
+  }
+
+  bitIsSet(index: number) {
+    return bitSet(this.v, index)
+  }
+
+  bitIsReset(index: number) {
+    return bitReset(this.v, index)
   }
 
   get value() {
@@ -163,6 +180,14 @@ export class int16_t implements DataType<number> {
     this.v = clearBit(this.v, index)
   }
 
+  bitIsSet(index: number) {
+    return bitSet(this.v, index)
+  }
+
+  bitIsReset(index: number) {
+    return bitReset(this.v, index)
+  }
+
   get value() {
     return this.v
   }
@@ -190,6 +215,14 @@ export class uint16_t implements DataType<number> {
 
   clearBit(index: number) {
     this.v = clearBit(this.v, index)
+  }
+
+  bitIsSet(index: number) {
+    return bitSet(this.v, index)
+  }
+
+  bitIsReset(index: number) {
+    return bitReset(this.v, index)
   }
 
   get value() {
@@ -221,6 +254,14 @@ export class int32_t implements DataType<number> {
     this.v = clearBit(this.v, index)
   }
 
+  bitIsSet(index: number) {
+    return bitSet(this.v, index)
+  }
+
+  bitIsReset(index: number) {
+    return bitReset(this.v, index)
+  }
+
   get value() {
     return this.v
   }
@@ -248,6 +289,14 @@ export class uint32_t implements DataType<number> {
 
   clearBit(index: number) {
     this.v = clearBit(this.v, index)
+  }
+
+  bitIsSet(index: number) {
+    return bitSet(this.v, index)
+  }
+
+  bitIsReset(index: number) {
+    return bitReset(this.v, index)
   }
 
   get value() {
