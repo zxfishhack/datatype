@@ -1,3 +1,5 @@
+import { clearBit, setBit } from './utils'
+
 export declare interface DataTypeSize {
   get size(): number;
 }
@@ -21,22 +23,22 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
     private count: number,
   ) {
     const inst = factory()
-    for(let i=0; i<count; i++) {
+    for (let i = 0; i < count; i++) {
       this.v.push(inst.value)
     }
   }
 
   splice(start: number, deleteCount?: number, ...items: V[]) {
     if (deleteCount !== undefined) {
-      this.v.splice(start, deleteCount, ...items);
+      this.v.splice(start, deleteCount, ...items)
     } else {
-      this.v.splice(start, deleteCount);
+      this.v.splice(start, deleteCount)
     }
     this.count = this.v.length
   }
 
   push(...v: V[]) {
-    this.v.push(...v);
+    this.v.push(...v)
     this.count = this.v.length
   }
 
@@ -95,7 +97,12 @@ export class int8_t implements DataType<number> {
   private v: number = 0
   public size = 1
 
-  constructor() {
+  setBit(index: number) {
+    this.v = setBit(this.v, index)
+  }
+
+  clearBit(index: number) {
+    this.v = clearBit(this.v, index)
   }
 
   get value() {
@@ -119,7 +126,12 @@ export class uint8_t implements DataType<number> {
   private v: number = 0
   public size = 1
 
-  constructor() {
+  setBit(index: number) {
+    this.v = setBit(this.v, index)
+  }
+
+  clearBit(index: number) {
+    this.v = clearBit(this.v, index)
   }
 
   get value() {
@@ -143,7 +155,12 @@ export class int16_t implements DataType<number> {
   private v: number = 0
   public size = 2
 
-  constructor() {
+  setBit(index: number) {
+    this.v = setBit(this.v, index)
+  }
+
+  clearBit(index: number) {
+    this.v = clearBit(this.v, index)
   }
 
   get value() {
@@ -167,7 +184,12 @@ export class uint16_t implements DataType<number> {
   private v: number = 0
   public size = 2
 
-  constructor() {
+  setBit(index: number) {
+    this.v = setBit(this.v, index)
+  }
+
+  clearBit(index: number) {
+    this.v = clearBit(this.v, index)
   }
 
   get value() {
@@ -191,7 +213,12 @@ export class int32_t implements DataType<number> {
   private v: number = 0
   public size = 4
 
-  constructor() {
+  setBit(index: number) {
+    this.v = setBit(this.v, index)
+  }
+
+  clearBit(index: number) {
+    this.v = clearBit(this.v, index)
   }
 
   get value() {
@@ -215,7 +242,12 @@ export class uint32_t implements DataType<number> {
   private v: number = 0
   public size = 4
 
-  constructor() {
+  setBit(index: number) {
+    this.v = setBit(this.v, index)
+  }
+
+  clearBit(index: number) {
+    this.v = clearBit(this.v, index)
   }
 
   get value() {
