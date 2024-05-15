@@ -336,7 +336,8 @@ export class bytes implements DataType<Uint8Array> {
   }
 
   decode(data: DataView, offset: number): void {
-    this.v = new Uint8Array(data.buffer.slice(offset, offset + this.v.length))
+    this.v = new Uint8Array(this.v.length)
+    this.v.set(new Uint8Array(data.buffer.slice(offset, offset + this.v.length)), 0)
   }
 
   encode(data: DataView, offset: number): void {
