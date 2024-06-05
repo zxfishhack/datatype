@@ -22,8 +22,8 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
     private factory: () => T,
     private count: number,
   ) {
-    const inst = factory()
     for (let i = 0; i < count; i++) {
+      const inst = factory()
       this.v.push(inst.value)
     }
   }
