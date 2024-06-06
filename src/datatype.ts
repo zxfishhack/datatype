@@ -47,6 +47,9 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
   }
 
   get size() {
+    if (this.v.length === 0) {
+      return 0
+    }
     let sizer = this.v[0] as DataTypeSize
     if (sizer.size) {
       let size = 0
@@ -76,6 +79,9 @@ export class array<T extends DataType<V>, V = T> implements DataType<V[]> {
   }
 
   encode(data: DataView, offset: number): void {
+    if (this.v.length === 0) {
+      return
+    }
     if ((this.v[0] as DataType<V>).encode) {
       for (let i = 0; i < this.length; i++) {
         const setter = this.v[i] as DataType<V>
